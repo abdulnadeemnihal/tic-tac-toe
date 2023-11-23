@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=poppins&display=swap');
 body {
     font-family:"Poppins", sans-serif;
-    background-color: #9400d3;
+    background-color: white;
+    width: 100vw;
+    text-align: center;
+    padding-top : 5vh;
+}
+.align{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 section {
     text-align: center;
@@ -11,6 +19,37 @@ section {
     background-color: #fff ;
     margin-top: 75px;
     box-shadow: 0px 10px 36px 16px rgba(0,0,0,0,1);
+}
+.turn-container{
+    width: 170px;
+    height: 80px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(1fr,1fr);
+    grid-template-rows: repeat(1fr,1fr);
+    position: relative;
+}
+.turn-container h3{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.turn-container .turn-box{
+    border: 3px solid #000;
+    font-size:1.6rem;
+    font-weight:700 ;
+}
+.turn-container .turn-box:nth-child(even){
+    border-right: none;
+}
+.bg{
+    position:absolute;
+    bottom:0 ;
+    left: 0;
+    width: 85px;
+    height: 40px;
+    background-color: darkmagenta;
+    z-index: -1;
+
 }
 .main-grid {
     display: grid;

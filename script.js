@@ -3,23 +3,30 @@ let boxes = document.querySelectorAll(".box");
 
 let turn ="X";
 
-let gameActive =false;
+let isGameOver =false;
 
 boxes.forEach(e =>{
         e.innerHTML=""
         e.addEventListener("click",()=>{
-            if(!gameActive && e.innerHTML ===""){
+            if(!isGameOve && e.innerHTML ===""){
                 e.innerHTML= turn;
                 cheakWin();
                 cheakDraw();
-                changecurrentPlayer();
+                changecturn();
                   
             }
         })
 })
 
 function changeturn(){
+if(turn ==="X"){
+    turn ="O";
+    document.querySelector("bg").computedStyleMap.left ="85px";
+}else{
+    turn ="O";
+    document.querySelector("bg").computedStyleMap.left ="0";
 
+}
 }
 function cheakWin(){
 
