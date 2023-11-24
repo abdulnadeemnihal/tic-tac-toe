@@ -15,7 +15,7 @@ section {
     text-align: center;
     border-radius: 10px;
     width: 500px;
-    margin: auto;
+    margin: center;
     background-color: #fff ;
     margin-top: 75px;
     box-shadow: 0px 10px 36px 16px rgba(0,0,0,0,1);
@@ -43,12 +43,12 @@ section {
 }
 .bg{
     position:absolute;
-    bottom:0 ;
+    bottom: -11px;;
     left: 0;
     width: 85px;
-    height: 40px;
-    background-color: darkmagenta;
-    z-index: -1;
+    height: 32px;
+    background-color: darkred;
+    z-index: -2;
 
 }
 .main-grid {
@@ -64,25 +64,29 @@ section {
     cursor: pointer;
     font-size: 2rem;
     font-weight: 700;
-    border: 2px solid #000;
+    border: 2px solid black;
 }
 .box:hover{
-    background-color: red;
+    background-color:#ff0000 ; 
 }
 #play-again{
-    background-color: maroon;
-    padding: 10px 25px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
     border: none;
+    width: 150px;
+    height: 30px;
     font-size: 1.2rem;
     border-radius: 10px;
-    cursor: pointer;
+    cursor:pointer;
+    
 }
 #play-again:hover{
-    padding: 10px 40px;
-    background-color: darkcyan;
-    color: #000;
+    background-color: rgb(255, 12, 12);
+    transition: 500ms;
+    height: 50px;
+    color: white;
+    cursor: pointer;
 }
-
 button {
     margin-bottom: 20px;
     height: 30px;
