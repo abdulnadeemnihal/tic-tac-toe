@@ -6,13 +6,13 @@ let turn ="X";
 let isGameOver =false;
 
 boxes.forEach(e =>{
-        e.innerHTML=""
+        e.innerHTML="";
         e.addEventListener("click",()=>{
-            if(!isGameOve && e.innerHTML ===""){
+            if(!isGameOver && e.innerHTML ===""){
                 e.innerHTML= turn;
                 cheakWin();
                 cheakDraw();
-                changecturn();
+                changeturn();
                   
             }
         })
@@ -21,16 +21,60 @@ boxes.forEach(e =>{
 function changeturn(){
 if(turn ==="X"){
     turn ="O";
-    document.querySelector("bg").computedStyleMap.left ="85px";
+    document.querySelector(".bg").style.left ="85px";
 }else{
-    turn ="O";
-    document.querySelector("bg").computedStyleMap.left ="0";
+    turn ="X";
+    document.querySelector(".bg").style.left ="0";
 
 }
 }
 function cheakWin(){
+let WinCondtions = [
+         [0,1,2] , [ 3,4,5] , [6,7,8] ,
+         [0,3,6] , [ 1,4,7] , [2,5,8] ,
+         [0,4,8] , [ 2,4,6] 
+]
+for(let i=0; i<WinCondtions.length; i++){
+    let v0=boxes[WinCondtions[i][0].innerHTML];
+    let v1=boxes[WinCondtions[i][1].innerHTML];
+    let v2=boxes[WinCondtions[i][2].innerHTML];
+    
+    if(v0!="" && v0 === v1 && v0 === v2){
+     isGameOver= true;
+     document.querySelector("#result").innerHTML = turn + "win"
+     document.querySelector("#play-again").style.display ="inline" 
+    for(j =0;j<3;j++){
+        boxes[WinCondtions[i][j]].style.backgroundcolor ="#08D9D6";
+        boxes[WinCondtions[i][j]].style.color ="#000";
+    }
+    }
 
+}
 }
 function cheakDraw(){
-
+     if(!isGameOver){
+        let isDraw = true;
+        boxes.forEach(e =>{
+            if(e.innerHTML ==="")isDraw= false;
+        })
+        if(isDraw){
+            isGameOver= true;
+            document.querySelector("#result").innerHTML = "Draw"
+            document.querySelector("#play-again").style.display ="inline" 
+        }
+     }
 }
+document.querySelector("#playagain").addEventListener("click",()=> {
+    isGameOver =false;
+    turn="X";
+    document.querySelector(".bg").style.left ="0";
+    document.querySelector("#result").innerHTML="";
+    document.querySelector("#play-again").style.display ="none";
+
+    boxes.forEach(e =>{
+        e.innerHTML="";
+        e.style.removeProperty("background-color");
+        e.style.color = "#fff";
+    })
+})
+
