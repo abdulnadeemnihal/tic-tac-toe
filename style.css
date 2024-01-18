@@ -7,18 +7,28 @@
     font-size:50px;
     cursor:pointer;
 }
-#gameContainer{
-    font-family: "Permanment marker", cursive ;
-    text-align: center;
 
+#gameContainer{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    text-align: center;
 }
 #cellContainer{
     display :grid;
     grid-template-columns: repeat(3,auto);
     width :225px;
     margin: auto;
-    background-color: aqua;
+    background-color: #00ffc8;
+}
+#statusText{
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 #restartBtn{
     background-color: red;
+    padding: 20px 35px;
+     font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 15px #7f7f7f; 
 }

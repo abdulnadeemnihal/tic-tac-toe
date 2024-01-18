@@ -40,7 +40,7 @@ function updateCell(cell,index){
 }
 function changePlayer(){
     currentPlayer = (currentPlayer =="X") ? "O" : "X";
-    statusText.textContent = `$(currentplayer)'s turn" `;
+    statusText.textContent = `player's turn `;
 }
 function checkWinner(){
     let roundWon =false;
